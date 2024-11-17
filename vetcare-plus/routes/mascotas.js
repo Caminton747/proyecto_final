@@ -1,11 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const mascotasController = require('../controllers/mascotasController');
+const {
+    crearMascota,
+    obtenerMascota,
+    obtenerMascotas,
+    actualizarMascota,
+    eliminarMascota,
+} = require('../controllers/mascotasController');
 
-router.post('/', mascotasController.crearMascota);
-router.get('/:id', mascotasController.obtenerMascota);
-router.get('/', mascotasController.obtenerMascotas);
-router.put('/:id', mascotasController.actualizarMascota);
-router.delete('/:id', mascotasController.eliminarMascota);
+// Rutas para las mascotas
+router
+    .post('/', crearMascota)
+    .get('/:id', obtenerMascota)
+    .get('/', obtenerMascotas)
+    .put('/:id', actualizarMascota)
+    .delete('/:id', eliminarMascota);
 
 module.exports = router;
