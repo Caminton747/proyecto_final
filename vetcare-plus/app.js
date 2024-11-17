@@ -32,7 +32,10 @@ app.use('/api/mascotas', mascotasRoutes);
 app.use('/api/servicios', serviciosRoutes);
 
 
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+const startServer = (app, port) => {
+    app.listen(port, () => {
+        console.log(`Servidor corriendo en http://localhost:${port}`);
+    });
+};
 
+module.exports = startServer;
