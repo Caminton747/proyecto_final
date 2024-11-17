@@ -13,7 +13,7 @@ exports.crearMascota = async (req, res) => {
 exports.obtenerMascota = async (req, res) => {
     try {
         const mascota = await Mascota.findById(req.params.id);
-        if (!mascota) return res.status(404).json({ error: 'Mascota no encontrada desafortunadamente' });
+        if (!mascota) return res.status(404).json({ error: 'Mascota no encontrada tristemente' });
         res.json(mascota);
     } catch (error) {
         res.status(500).json({ error: 'Error al obtener la mascota' });
